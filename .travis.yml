@@ -6,3 +6,4 @@ cache:
     - "node_modules"
 script:
     - "make test"
+    - "mocha test/**/*.js"
