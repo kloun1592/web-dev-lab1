@@ -74,6 +74,7 @@ build/Release
 node_modules/
 jspm_packages/
 coverage/
+.idea/
 
 # TypeScript v1 declaration files
 typings/

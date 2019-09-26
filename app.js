@@ -3,7 +3,8 @@ const createError = require('http-errors'),
       path = require('path'),
       cookieParser = require('cookie-parser'),
       logger = require('morgan'),
-      indexRouter = require('./routes/index');
+      indexRouter = require('./routes/index'),
+      parser = require('./routes/parser/parser');
 
 let app = express();
 
@@ -34,5 +35,10 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+parser.getNews('https://vc.ru/')
+    .catch((err) => {
+      console.log(err)
+    });
 
 module.exports = app;

@@ -4,8 +4,8 @@ const express = require('express'),
 
 router.get('/', function(req, res) {
     parser.getNews('https://vc.ru/')
-      .then(news => {
-          res.render('index', { titles: news });
+      .then(json => {
+          res.render('index', { titles: json.articles });
       })
       .catch(() => {
           res.status(500).send('Error');
