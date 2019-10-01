@@ -44,7 +44,7 @@ describe('vc.ru parser', () => {
     it('should return json with fields: "articles", "creationDate", "url" with length greater than zero for each one ', () => {
         const json = JSON.parse(parser.saveJsonAsFile(parser.getNews('https://vc.ru/'), 'https://vc.ru'));
 
-        expect(Object.keys(json['articles']).length).to.be.at.least(0);
+        expect(Object.keys(json['articles']).length).to.be.at.least(1);
         expect(Date.parse(json['creationDate'])).to.be.at.least(1);
         expect(json['url'].length).to.be.at.least(1);
     });
